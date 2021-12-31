@@ -65,6 +65,7 @@ This image provides various versions that are available via tags. `latest` tag u
 | Tag | Description |
 | :----: | --- |
 | nightly | Nightly Readarr releases |
+| nightly-alpine | Nightly Readarr releases using our Alpine baseimage |
 
 ## Application Setup
 
@@ -243,4 +244,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **30.12.21:** - Added nightly-alpine branch.
 * **28.07.21:** - Initial Release.
