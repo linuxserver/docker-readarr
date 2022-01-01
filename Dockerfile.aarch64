@@ -15,6 +15,7 @@ RUN \
   echo "**** install packages ****" && \
   apk add -U --upgrade --no-cache \
     curl \
+    chromaprint \    
     jq \
     icu-libs \
     sqlite-libs && \
