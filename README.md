@@ -244,5 +244,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **01.01.22:** - Add chromaprint for audio fingerprinting.
 * **30.12.21:** - Added nightly-alpine branch.
 * **28.07.21:** - Initial Release.
