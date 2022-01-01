@@ -17,6 +17,7 @@ RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     jq \
+    libchromaprint-tools \    
     libicu66 \
     sqlite3 && \
   echo "**** install readarr ****" && \
