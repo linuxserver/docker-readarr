@@ -53,5 +53,6 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "21.01.22:", desc: "Remove chromaprint as it's no longer a required dependency." }
   - { date: "01.01.22:", desc: "Add chromaprint for audio fingerprinting." }
   - { date: "28.07.21:", desc: "Initial Release." }
