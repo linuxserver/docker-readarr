@@ -243,5 +243,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
 * **01.01.22:** - Add chromaprint for audio fingerprinting.
 * **28.07.21:** - Initial Release.
