@@ -243,6 +243,8 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **04.02.22:** - Rebase nightly branch to Alpine.
 * **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
 * **01.01.22:** - Add chromaprint for audio fingerprinting.
+* **30.12.21:** - Add nightly-alpine branch.
 * **28.07.21:** - Initial Release.
