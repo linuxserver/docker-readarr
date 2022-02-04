@@ -5,7 +5,7 @@ ARG BUILD_DATE
 ARG VERSION
 ARG READARR_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="thespad"
+LABEL maintainer="Roxedus,thespad"
 
 # environment settings
 ARG READARR_BRANCH="nightly"
