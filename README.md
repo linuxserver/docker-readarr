@@ -27,6 +27,12 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
+# DEPRECATION NOTICE
+
+This image is deprecated. We will not offer support for this image and it will not be updated.
+Our standard nightly tag is now Alpine based:
+https://github.com/linuxserver/docker-readarr
+
 # [linuxserver/readarr](https://github.com/linuxserver/docker-readarr)
 
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Freadarr?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Freadarr)
@@ -244,6 +250,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **04.02.22:** - Deprecate nightly-alpine branch.
 * **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
 * **01.01.22:** - Add chromaprint for audio fingerprinting.
 * **30.12.21:** - Add nightly-alpine branch.
