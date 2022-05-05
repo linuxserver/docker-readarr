@@ -31,7 +31,7 @@ Find us at:
 
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Freadarr?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Freadarr)
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-readarr.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-readarr)
-[![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-readarr.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-readarr/releases)
+[![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-readarr.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github&include_prereleases)](https://github.com/linuxserver/docker-readarr/releases)
 [![GitHub Package Repository](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=GitHub%20Package&logo=github)](https://github.com/linuxserver/docker-readarr/packages)
 [![GitLab Container Registry](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=GitLab%20Registry&logo=gitlab)](https://gitlab.com/linuxserver.io/docker-readarr/container_registry)
 [![Quay.io](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=Quay.io)](https://quay.io/repository/linuxserver.io/readarr)
@@ -46,25 +46,26 @@ Find us at:
 
 ## Supported Architectures
 
-Our images support multiple architectures such as `x86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
+We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
 
-Simply pulling `lscr.io/linuxserver/readarr` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+Simply pulling `lscr.io/linuxserver/readarr:nightly` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
 The architectures supported by this image are:
 
-| Architecture | Tag |
-| :----: | --- |
-| x86-64 | amd64-latest |
-| arm64 | arm64v8-latest |
-| armhf | arm32v7-latest |
+| Architecture | Available | Tag |
+| :----: | :----: | ---- |
+| x86-64 | ✅ | amd64-\<version tag\> |
+| arm64 | ✅ | arm64v8-\<version tag\> |
+| armhf| ✅ | arm32v7-\<version tag\> |
 
 ## Version Tags
 
-This image provides various versions that are available via tags. `latest` tag usually provides the latest stable version. Others are considered under development and caution must be exercised when using them.
+This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
 
-| Tag | Description |
-| :----: | --- |
-| nightly | Nightly Readarr releases |
+| Tag | Available | Description |
+| :----: | :----: |--- |
+| latest | ❌ | |
+| nightly | ✅ | Nightly Readarr releases |
 
 ## Application Setup
 
@@ -89,7 +90,7 @@ Here are some example snippets to help you get started creating a container.
 version: "2.1"
 services:
   readarr:
-    image: lscr.io/linuxserver/readarr
+    image: lscr.io/linuxserver/readarr:nightly
     container_name: readarr
     environment:
       - PUID=1000
@@ -117,7 +118,7 @@ docker run -d \
   -v /path/to/books:/books `#optional` \
   -v /path/to/downloadclient-downloads:/downloads `#optional` \
   --restart unless-stopped \
-  lscr.io/linuxserver/readarr
+  lscr.io/linuxserver/readarr:nightly
 ```
 
 ## Parameters
@@ -177,7 +178,7 @@ We publish various [Docker Mods](https://github.com/linuxserver/docker-mods) to 
 * container version number
   * `docker inspect -f '{{ index .Config.Labels "build_version" }}' readarr`
 * image version number
-  * `docker inspect -f '{{ index .Config.Labels "build_version" }}' lscr.io/linuxserver/readarr`
+  * `docker inspect -f '{{ index .Config.Labels "build_version" }}' lscr.io/linuxserver/readarr:nightly`
 
 ## Updating Info
 
@@ -195,7 +196,7 @@ Below are the instructions for updating containers:
 
 ### Via Docker Run
 
-* Update the image: `docker pull lscr.io/linuxserver/readarr`
+* Update the image: `docker pull lscr.io/linuxserver/readarr:nightly`
 * Stop the running container: `docker stop readarr`
 * Delete the container: `docker rm readarr`
 * Recreate a new container with the same docker run parameters as instructed above (if mapped correctly to a host folder, your `/config` folder and settings will be preserved)
@@ -230,7 +231,7 @@ cd docker-readarr
 docker build \
   --no-cache \
   --pull \
-  -t lscr.io/linuxserver/readarr:latest .
+  -t lscr.io/linuxserver/readarr:nightly .
 ```
 
 The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
