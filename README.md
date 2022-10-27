@@ -65,7 +65,8 @@ This image provides various versions that are available via tags. Please read th
 | Tag | Available | Description |
 | :----: | :----: |--- |
 | latest | ❌ | |
-| nightly | ✅ | Nightly Readarr releases |
+| develop | ✅ | Readarr releases from their develop branch |
+| nightly | ✅ | Readarr releases from their nightly branch |
 
 ## Application Setup
 
@@ -244,6 +245,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **27.10.22:** - Rebase nightly to Alpine 3.16, migrate to s6v3.
 * **04.02.22:** - Rebase nightly branch to Alpine.
 * **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
 * **01.01.22:** - Add chromaprint for audio fingerprinting.
