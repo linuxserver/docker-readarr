@@ -16,7 +16,8 @@ available_architectures:
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "nightly", desc: "Nightly Readarr releases" }
+  - { tag: "develop", desc: "Readarr releases from their develop branch" }
+  - { tag: "nightly", desc: "Readarr releases from their nightly branch" }
 
 # container parameters
 param_container_name: "{{ project_name }}"
@@ -53,6 +54,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "27.10.22:", desc: "Rebase nightly to Alpine 3.16, migrate to s6v3." }
   - { date: "04.02.22:", desc: "Rebase nightly branch to Alpine." }
   - { date: "21.01.22:", desc: "Remove chromaprint as it's no longer a required dependency." }
   - { date: "01.01.22:", desc: "Add chromaprint for audio fingerprinting." }
