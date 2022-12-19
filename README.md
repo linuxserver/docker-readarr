@@ -245,6 +245,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **19.12.22:** - Rebase nightly to Alpine 3.17.
 * **27.10.22:** - Rebase nightly to Alpine 3.16, migrate to s6v3.
 * **04.02.22:** - Rebase nightly branch to Alpine.
 * **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
