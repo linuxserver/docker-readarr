@@ -54,6 +54,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "19.12.22:", desc: "Rebase develop branch to Alpine 3.17, migrate to s6v3." }
   - { date: "21.02.22:", desc: "Add develop branch." }
   - { date: "04.02.22:", desc: "Rebase nightly branch to Alpine." }
   - { date: "21.01.22:", desc: "Remove chromaprint as it's no longer a required dependency." }
