@@ -49,6 +49,7 @@ Microsoft.IdentityModel.Protocols.OpenIdConnect                                6
 Microsoft.IdentityModel.Tokens                                                 6.8.0                  dotnet  
 Microsoft.NETCore.Platforms                                                    1.1.0                  dotnet  
 Microsoft.NETCore.Targets                                                      1.1.0                  dotnet  
+Microsoft.OpenApi                                                              1.2.3                  dotnet  
 Microsoft.Win32.Primitives                                                     4.3.0                  dotnet  
 Microsoft.Win32.Registry                                                       5.0.0                  dotnet  
 Microsoft.Win32.SystemEvents                                                   6.0.0                  dotnet  
@@ -91,6 +92,8 @@ Servarr.FluentMigrator.Runner.SqlServerCe                                      3
 SharpZipLib                                                                    1.3.3                  dotnet  
 SixLabors.Fonts                                                                1.0.0-beta17           dotnet  
 SixLabors.ImageSharp                                                           2.1.3                  dotnet  
+Swashbuckle.AspNetCore.Swagger                                                 6.5.0                  dotnet  
+Swashbuckle.AspNetCore.SwaggerGen                                              6.5.0                  dotnet  
 System.AppContext                                                              4.3.0                  dotnet  
 System.Buffers                                                                 4.3.0                  dotnet  
 System.Collections                                                             4.3.0                  dotnet  
