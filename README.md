@@ -56,7 +56,7 @@ The architectures supported by this image are:
 | :----: | :----: | ---- |
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
-| armhf| ✅ | arm32v7-\<version tag\> |
+| armhf| ❌ | arm32v7-\<version tag\> |
 
 ## Version Tags
 
@@ -245,6 +245,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **06.06.23:** - Rebase to Alpine 3.18.
 * **22.02.22:** - Add develop branch.
 * **21.01.22:** - Rebase nightly branch to Alpine & deprecate nightly-alpine branch.
 * **21.01.22:** - Remove chromaprint as it's no longer a required dependency.
