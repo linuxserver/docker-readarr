@@ -165,7 +165,7 @@ NodaTime                                                    3.0.0.0             
 Npgsql                                                      7.0.6.0                                                             dotnet  
 PdfSharpCore                                                1.0.0                                                               dotnet  
 Polly.Contrib.WaitAndRetry                                  1.1.1.0+7596d2dacf22d88bbd814bc49c28424fb6e921e9                    dotnet  
-Readarr                                                     0.3.13.2337                                                         dotnet  
+Readarr                                                     0.3.13.2338                                                         dotnet  
 RestSharp                                                   106.15.0+ca15b2599d9e85efd9ac43c7112188b9b0cc67a0                   dotnet  
 ReusableTasks                                               2.0.0-master+2aa9a10                                                dotnet  
 Sentry                                                      3.31.0.0                                                            dotnet  
