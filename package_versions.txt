@@ -165,7 +165,7 @@ NodaTime                                                    3.0.0.0             
 Npgsql                                                      7.0.6.0                                                             dotnet  
 PdfSharpCore                                                1.0.0                                                               dotnet  
 Polly.Contrib.WaitAndRetry                                  1.1.1.0+7596d2dacf22d88bbd814bc49c28424fb6e921e9                    dotnet  
-Readarr                                                     0.3.13.2338                                                         dotnet  
+Readarr                                                     0.3.14.2348                                                         dotnet  
 RestSharp                                                   106.15.0+ca15b2599d9e85efd9ac43c7112188b9b0cc67a0                   dotnet  
 ReusableTasks                                               2.0.0-master+2aa9a10                                                dotnet  
 Sentry                                                      3.31.0.0                                                            dotnet  
@@ -397,7 +397,7 @@ shadow                                                      4.13-r4             
 skalibs                                                     2.13.1.1-r1                                                         apk     
 sqlite-libs                                                 3.41.2-r2                                                           apk     
 ssl_client                                                  1.36.1-r5                                                           apk     
-tzdata                                                      2023c-r1                                                            apk     
+tzdata                                                      2023d-r0                                                            apk     
 utmps-libs                                                  0.1.2.1-r1                                                          apk     
 xmlstarlet                                                  1.6.1-r2                                                            apk     
 xz-libs                                                     5.4.3-r0                                                            apk     
