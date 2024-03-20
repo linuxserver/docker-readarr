@@ -76,7 +76,7 @@ Access the webui at `<your-ip>:8787`, for more information check out [Readarr](h
 
 We have set `/books` and `/downloads` as ***optional paths***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to hardlink (TL;DR a way for a file to exist in multiple places on the same file system while only consuming one file worth of space), or atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
 
-Use the optional paths if you dont understand, or dont want hardlinks/atomic moves.
+Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
 
 The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
 
@@ -88,7 +88,6 @@ Here are some example snippets to help you get started creating a container.
 
 ```yaml
 ---
-version: "2.1"
 services:
   readarr:
     image: lscr.io/linuxserver/readarr:develop
@@ -203,21 +202,6 @@ Below are the instructions for updating containers:
 * Recreate a new container with the same docker run parameters as instructed above (if mapped correctly to a host folder, your `/config` folder and settings will be preserved)
 * You can also remove the old dangling images: `docker image prune`
 
-### Via Watchtower auto-updater (only use if you don't remember the original parameters)
-
-* Pull the latest image at its tag and replace it with the same env variables in one run:
-
-  ```bash
-  docker run --rm \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  containrrr/watchtower \
-  --run-once readarr
-  ```
-
-* You can also remove the old dangling images: `docker image prune`
-
-**Note:** We do not endorse the use of Watchtower as a solution to automated updates of existing Docker containers. In fact we generally discourage automated updates. However, this is a useful tool for one-time manual updates of containers where you have forgotten the original parameters. In the long term, we highly recommend using [Docker Compose](https://docs.linuxserver.io/general/docker-compose).
-
 ### Image Update Notifications - Diun (Docker Image Update Notifier)
 
 * We recommend [Diun](https://crazymax.dev/diun/) for update notifications. Other tools that automatically update containers unattended are not recommended or supported.
@@ -245,6 +229,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.03.24:** - Rebase to Alpine 3.19.
 * **06.06.23:** - Rebase to Alpine 3.18.
 * **22.02.22:** - Add develop branch.
 * **21.01.22:** - Rebase nightly branch to Alpine & deprecate nightly-alpine branch.
