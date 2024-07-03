@@ -1,6 +1,9 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+mkdir -p /run/readarr-temp
+
 # permissions
 lsiown -R abc:abc \
-    /config
+    /config \
+    /run/readarr-temp
