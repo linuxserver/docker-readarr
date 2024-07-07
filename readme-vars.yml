@@ -33,8 +33,7 @@ param_usage_include_ports: true
 param_ports:
   - { external_port: "8787", internal_port: "8787", port_desc: "The port for the Readarr web UI", }
 
-# optional env variables
-opt_param_usage_include_env: false
+readonly_supported: true
 
 # application setup block
 app_setup_block_enabled: true
