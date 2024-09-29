@@ -170,7 +170,7 @@ PdfSharpCore                                                1.3.32              
 Polly                                                       8.4.1.3582                                                  dotnet                    
 Polly.Contrib.WaitAndRetry                                  1.1.1.0+7596d2dacf22d88bbd814bc49c28424fb6e921e9            dotnet                    
 Polly.Core                                                  8.4.1.3582                                                  dotnet                    
-Readarr                                                     0.4.0.2634                                                  dotnet  (+7 duplicates)   
+Readarr                                                     0.4.1.2639                                                  dotnet  (+7 duplicates)   
 RestSharp                                                   106.15.0+ca15b2599d9e85efd9ac43c7112188b9b0cc67a0           dotnet                    
 ReusableTasks                                               2.0.0                                                       dotnet                    
 Sentry                                                      3.31.0.0                                                    dotnet                    
@@ -361,7 +361,7 @@ bash                                                        5.2.26-r0           
 brotli-libs                                                 1.1.0-r2                                                    apk                       
 busybox                                                     1.36.1-r29                                                  apk                       
 busybox-binsh                                               1.36.1-r29                                                  apk                       
-c-ares                                                      1.28.1-r0                                                   apk                       
+c-ares                                                      1.33.1-r0                                                   apk                       
 ca-certificates                                             20240705-r0                                                 apk                       
 ca-certificates-bundle                                      20240705-r0                                                 apk                       
 catatonit                                                   0.2.0-r0                                                    apk                       
