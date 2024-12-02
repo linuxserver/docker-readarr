@@ -6,35 +6,28 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) - Book Manager and Automation (Sonarr for Ebooks)
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest" }
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest" }
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: true
 development_versions_items:
-  - { tag: "develop", desc: "Readarr releases from their develop branch" }
-  - { tag: "nightly", desc: "Readarr releases from their nightly branch" }
-
+  - {tag: "develop", desc: "Readarr releases from their develop branch"}
+  - {tag: "nightly", desc: "Readarr releases from their nightly branch"}
 # container parameters
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Database and Readarr configs", }
-
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/data", desc: "Database and Readarr configs"}
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/books", vol_host_path: "/path/to/books", desc: "Location of Book library on disk (See note in Application setup)", }
-  - { vol_path: "/downloads", vol_host_path: "/path/to/download-client-downloads", desc: "Location of download managers output directory (See note in Application setup)", }
-
+  - {vol_path: "/books", vol_host_path: "/path/to/books", desc: "Location of Book library on disk (See note in Application setup)"}
+  - {vol_path: "/downloads", vol_host_path: "/path/to/download-client-downloads", desc: "Location of download managers output directory (See note in Application setup)"}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "8787", internal_port: "8787", port_desc: "The port for the Readarr web UI", }
-
+  - {external_port: "8787", internal_port: "8787", port_desc: "The port for the Readarr web UI"}
 readonly_supported: true
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -47,16 +40,58 @@ app_setup_block: |
   Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
 
   The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
-
+# init diagram
+init_diagram: |
+  "readarr:nightly": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-readarr-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-config -> init-readarr-config
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-readarr
+    svc-readarr -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "readarr:nightly" <- Base Images
 # changelog
 changelogs:
-  - { date: "25.05.24:", desc: "Rebase to Alpine 3.20." }
-  - { date: "20.03.24:", desc: "Rebase to Alpine 3.19." }
-  - { date: "06.06.23:", desc: "Rebase nightly to Alpine 3.18." }
-  - { date: "19.12.22:", desc: "Rebase nightly to Alpine 3.17." }
-  - { date: "27.10.22:", desc: "Rebase nightly to Alpine 3.16, migrate to s6v3." }
-  - { date: "04.02.22:", desc: "Rebase nightly branch to Alpine." }
-  - { date: "21.01.22:", desc: "Remove chromaprint as it's no longer a required dependency." }
-  - { date: "01.01.22:", desc: "Add chromaprint for audio fingerprinting." }
-  - { date: "30.12.21:", desc: "Add nightly-alpine branch." }
-  - { date: "28.07.21:", desc: "Initial Release." }
+  - {date: "25.05.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
+  - {date: "06.06.23:", desc: "Rebase nightly to Alpine 3.18."}
+  - {date: "19.12.22:", desc: "Rebase nightly to Alpine 3.17."}
+  - {date: "27.10.22:", desc: "Rebase nightly to Alpine 3.16, migrate to s6v3."}
+  - {date: "04.02.22:", desc: "Rebase nightly branch to Alpine."}
+  - {date: "21.01.22:", desc: "Remove chromaprint as it's no longer a required dependency."}
+  - {date: "01.01.22:", desc: "Add chromaprint for audio fingerprinting."}
+  - {date: "30.12.21:", desc: "Add nightly-alpine branch."}
+  - {date: "28.07.21:", desc: "Initial Release."}
