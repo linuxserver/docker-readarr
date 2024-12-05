@@ -47,3 +47,4 @@ COPY root/ /
 EXPOSE 8787
 
 VOLUME /config
+VOLUME /books
