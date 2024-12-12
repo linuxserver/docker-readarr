@@ -3,7 +3,8 @@
 
 mkdir -p /run/readarr-temp
 
-# permissions
-lsiown -R abc:abc \
-    /config \
-    /run/readarr-temp
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    lsiown -R abc:abc \
+        /config \
+        /run/readarr-temp
+fi
