@@ -46,7 +46,7 @@ Find us at:
 
 We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://distribution.github.io/distribution/spec/manifest-v2-2/#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
 
-Simply pulling `lscr.io/linuxserver/readarr` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+Simply pulling `lscr.io/linuxserver/readarr:develop` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
 The architectures supported by this image are:
 
@@ -99,7 +99,7 @@ To help you get started creating a container from this image you can either use 
 ---
 services:
   readarr:
-    image: lscr.io/linuxserver/readarr
+    image: lscr.io/linuxserver/readarr:develop
     container_name: readarr
     environment:
       - PUID=1000
@@ -127,7 +127,7 @@ docker run -d \
   -v /path/to/books:/books `#optional` \
   -v /path/to/download-client-downloads:/downloads `#optional` \
   --restart unless-stopped \
-  lscr.io/linuxserver/readarr
+  lscr.io/linuxserver/readarr:develop
 ```
 
 ## Parameters
@@ -295,7 +295,7 @@ cd docker-readarr
 docker build \
   --no-cache \
   --pull \
-  -t lscr.io/linuxserver/readarr .
+  -t lscr.io/linuxserver/readarr:develop .
 ```
 
 The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
