@@ -6,6 +6,10 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) - Book Manager and Automation (Sonarr for Ebooks)
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Books"
+# deprecation information
+project_deprecation_status: true
+project_deprecation_message: "Due to lack of developers, and issues with maintaining status quo, upstream has decided to retire the project."
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
@@ -33,14 +37,7 @@ nonroot_supported: true
 app_setup_block_enabled: true
 app_setup_block: |
   Access the webui at `<your-ip>:8787`, for more information check out [Readarr](https://github.com/Readarr/Readarr).
-
-  ### Media folders
-
-  We have set `/books` and `/downloads` as ***optional paths***, this is because it is the easiest way to get started. While easy to use, it has some drawbacks. Mainly losing the ability to hardlink (TL;DR a way for a file to exist in multiple places on the same file system while only consuming one file worth of space), or atomic move (TL;DR instant file moves, rather than copy+delete) files while processing content.
-
-  Use the optional paths if you don't understand, or don't want hardlinks/atomic moves.
-
-  The folks over at servarr.com wrote a good [write-up](https://wiki.servarr.com/docker-guide#consistent-and-well-planned-paths) on how to get started with this.
+readme_media: true
 # init diagram
 init_diagram: |
   "readarr:nightly": {
@@ -84,6 +81,7 @@ init_diagram: |
   "readarr:nightly" <- Base Images
 # changelog
 changelogs:
+  - {date: "27.06.25:", desc: "Deprecate image."}
   - {date: "12.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "25.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
