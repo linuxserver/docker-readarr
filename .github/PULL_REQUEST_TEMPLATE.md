@@ -1,3 +1,9 @@
+# DEPRECATION NOTICE
+
+This image is deprecated. We will not offer support for this image and it will not be updated.
+
+Due to lack of developers, and issues with maintaining status quo, upstream has decided to retire the project.
+
 <!--- Provide a general summary of your changes in the Title above -->
 
 [linuxserverurl]: https://linuxserver.io
@@ -21,7 +27,7 @@
 
 ------------------------------
 
- - [ ] I have read the [contributing](https://github.com/linuxserver/docker-readarr/blob/main/.github/CONTRIBUTING.md) guideline and understand that I have made the correct modifications
+ - [ ] I have read the [contributing](https://github.com/linuxserver/docker-readarr/blob/develop/.github/CONTRIBUTING.md) guideline and understand that I have made the correct modifications
 
 ------------------------------
 
